@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="TESTNAME" style="position: absolute; left: 60px; bottom: 10px; height: 90px; width: 761px;">
+        <ui:Label text="Press E to interact with " display-tooltip-when-elided="true" name="NPCInteractTipText" style="display: flex; visibility: visible; -unity-text-align: upper-center; height: 49px;" />
+    </ui:VisualElement>
+</ui:UXML>
