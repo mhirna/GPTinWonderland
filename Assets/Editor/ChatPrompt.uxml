@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="height: 261px;">
+        <ui:Label display-tooltip-when-elided="true" name="ChatPrompt" style="height: 246px; -unity-text-align: middle-center; width: 864px; justify-content: center; position: absolute; top: 8px; left: 4px;" />
+    </ui:VisualElement>
+    <ui:VisualElement style="position: absolute; top: 320px; left: 20px; right: 20px; bottom: 20px;">
+        <ui:TextField picking-mode="Ignore" label="You" value="filler text" text="Type Here to Talk!" name="UserTextPrompt" style="position: absolute; top: 11px; left: 266px;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -10,6 +10,8 @@ public class PlayerViewCheck : MonoBehaviour
     private UIDocument m_UIDocument;
     //    private TemplateContainer UITreeAsset;
 
+    public CharacterInteractionHandler chHandler;
+
     private string baseText;
 
     // Start is called before the first frame update
@@ -18,22 +20,57 @@ public class PlayerViewCheck : MonoBehaviour
         var rootElement = m_UIDocument.rootVisualElement;
 
         baseText = rootElement.Q<Label>("NPCInteractTipText").text;
+
+        rootElement.Q<Label>("NPCInteractTipText").text = "";
     }
 
     // Update is called once per frame
-    //void Update()
-    //{   
-    //}
+    void Update()
+    {
+
+        if (chHandler.enabled == true && Input.GetKeyDown(KeyCode.E))
+        {
+            var rootElement = m_UIDocument.rootVisualElement;
+            rootElement.Q<Label>("NPCInteractTipText").text = "";
+        }
+
+    }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        var rootElement = m_UIDocument.rootVisualElement;
+        Debug.Log(other.GetType());
 
-        string UIText = baseText + other.name;
+        if (other is CapsuleCollider)
+        {
+            var rootElement = m_UIDocument.rootVisualElement;
 
-        rootElement.Q<Label>("NPCInteractTipText").text = UIText;
+            string UIText = baseText + other.name;
 
+            rootElement.Q<Label>("NPCInteractTipText").text = UIText;
+
+
+            chHandler.enabled = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log(other.GetType());
+
+        if (other is CapsuleCollider)
+        {
+            var rootElement = m_UIDocument.rootVisualElement;
+
+            //            string UIText = baseText + other.name;
+
+            //            rootElement.Q<Label>("NPCInteractTipText").text = UIText;
+
+            rootElement.Q<Label>("NPCInteractTipText").text = "";
+
+
+            chHandler.enabled = false;
+        }
     }
 
 }
