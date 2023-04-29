@@ -28,6 +28,7 @@ https://github.com/github/gitignore/blob/main/Unity.gitignore
 # Visual Studio cache directory
 .vs/
 
+
 # Gradle cache directory
 .gradle/
 
